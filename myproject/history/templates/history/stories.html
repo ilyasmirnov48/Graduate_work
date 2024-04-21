@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Истории{% endblock %}
+
+{% block content %}
+
+<div class="category">
+    <ul>
+        {% for c in cats %}
+		            <li><a href="{{ c.get_absolute_url }}">{{c.name}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="content">
+    <ul>
+        {% for p in posts %}
+            <li><h3 class="title_post">{{p.title}}</h3>
+                <div class="stories_p">{{p.content|linebreaks|truncatewords:100}}</div>
+                <div class="clear"></div>
+                <div class="link_read_post"><a href="{{ p.get_absolute_url }}">Читать пост</a></div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

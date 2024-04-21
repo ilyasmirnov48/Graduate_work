@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block header_index %}
+    <div class="header">
+        <div class="header_index">
+            <div class="header_text">Истории без времени</div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="title_content">
+    <h1 class="index_h1">TOP-6 историй</h1>
+</div>
+<div class="controls">
+    <img src="../../static/history/images/left.png" alt="left" id="leftBtn">
+    <div class="container">
+        <div class="gallery">
+            <span>
+                <a href="Александр II и Мария Александровна.html">
+                    <img src="../../static/history/images/aleksandr_21.jpg" alt="Александр II и Мария Александровна">
+                </a>
+            </span>
+            <span>
+                <a href="Королева Эллинов.html">
+                    <img src="../../static/history/images/queen_hellenes1.jpg" alt="Королева Эллинов">
+                </a>
+            </span>
+            <span>
+                <a href="Бал романовых.html">
+                    <img src="../../static/history/images/bal-romanovyh1.jpg" alt="Бал романовых">
+                </a>
+            </span>
+        </div>
+
+        <div class="gallery">
+            <span>
+                <a href="Грибоедов.html">
+                    <img src="../../static/history/images/griboedov1.jpg" alt="Грибоедов">
+                </a>
+            </span>
+            <span>
+                <a href="Пушкин.html">
+                    <img src="../../static/history/images/pushkin1.jpg" alt="Пушкин">
+                </a>
+            </span>
+            <span>
+                <a href="Маяковский.html">
+                    <img src="../../static/history/images/mayak1.jpg" alt="Маяковский">
+                </a>
+            </span>
+        </div>
+    </div>
+    <img src="../../static/history/images/right.png" alt="right" id="rightBtn">
+</div>
+
+
+<div class="content">
+    <h2 class="heading_h2">Для чего современному человеку нужно знать историю?</h2>
+    <hr>
+    <h3 class="index_h3">1.	«Надо знать прошлое, чтобы понимать настоящее и предвидеть будущее».</h3>
+    <p class="index_p">Эта фраза принадлежит Виссариону Белинскому, литературному критику. Похожие события в истории
+        человечества повторяются по спирали. Например, как заметил другой любитель истории, У. Черчилль, «История рода
+        человеческого — война. Помимо кратких и ненадежных промежутков, на Земле никогда не было мира». И не поспоришь.
+    </p>
+    <hr>
+    <h3 class="index_h3">2. «Если ты знаешь историю, средствам массовой информации будет труднее тебя обмануть».</h3>
+    <p class="index_p">Пропаганда всегда построена на искажении действительности. Массмедиа корректируют взгляды граждан
+        и на события новейшей истории, и на древность. Правда, этим почти всегда грешат и историки. Однако со временем
+        оценочные суждения осыпаются, оставляя наблюдателю факты. Только надо помнить, что школьный курс истории — так
+        себе источник. Например, что ты знаешь об империи Чингисхана? Юрты, грязные дикие люди? Между тем в ханской
+        столице, Каракоруме, работали лучшие мастера из захваченных земель, в том числе архитекторы и строители. На
+        землях, находившихся под властью монголов, эффективно действовала почтовая служба. Чиновники получали жалованье,
+        а не кормились от взяток — за них можно было лишиться головы.
+    </p>
+    <hr>
+    <h3 class="index_h3">3. Если ты знаешь историю, то всегда сможешь поддержать интересную беседу.</h3>
+    <p class="index_p">К месту рассказать неожиданные факты про монголов, и про Ольгу Константиновну Романову, которая
+        стала королевой Эллинов, и про загадочную смерть Александра Сергеевича Пушкина.
+    </p>
+    <hr>
+</div>
+<br>
+<script>
+    let horizontScroll = document.querySelector('.container');
+    let leftBtn = document.getElementById('leftBtn');
+    let rightBtn = document.getElementById('rightBtn');
+
+    rightBtn.addEventListener('click', ()=> {
+        horizontScroll.style.scrollBehavior = "smooth";
+        horizontScroll.scrollLeft += 900;
+    })
+
+    leftBtn.addEventListener('click', ()=> {
+        horizontScroll.style.scrollBehavior = "smooth"
+        horizontScroll.scrollLeft -= 900;
+    })
+</script>
+{% endblock %}
